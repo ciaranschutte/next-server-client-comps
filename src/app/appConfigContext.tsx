@@ -1,5 +1,6 @@
 "use client";
 
+import { ThemeProvider } from "@emotion/react";
 import { createContext, useContext } from "react";
 
 const ConfigContext = createContext({});
@@ -26,4 +27,8 @@ export const AppConfig = ({
 }: {
   children: any;
   config: any;
-}) => <ConfigProvider config={config}>{children}</ConfigProvider>;
+}) => (
+  <ConfigProvider config={config}>
+    <ThemeProvider theme={{ color: "green" }}>{children}</ThemeProvider>
+  </ConfigProvider>
+);
