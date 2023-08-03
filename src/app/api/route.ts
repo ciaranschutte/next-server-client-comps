@@ -22,5 +22,5 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   headers();
-  return NextResponse.json("im a silly route");
+  return NextResponse.json({ config: process.env.TEST_RUNTIME_VAR });
 }
