@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "TEST_RUNTIME_VAR=I_AM_WORKING next start",
     "lint": "next lint"
   },
   "dependencies": {
