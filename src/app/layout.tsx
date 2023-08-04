@@ -1,4 +1,6 @@
-import { AppConfig } from "./appConfigContext";
+/** @jsxImportSource react */
+
+import { AppConfig, ConfigProvider } from "./appConfigContext";
 
 async function getAppConfig() {
   // cache: "no-store" ensures it's run server side
@@ -30,7 +32,7 @@ export default async function RootLayout({
         <pre>{JSON.stringify(appConfig)}</pre>
         {/** here on down client components */}
         {/** this is just wrapping children in a context provider, but importantly module wise it's a different function */}
-        <AppConfig config={appConfig}>{children}</AppConfig>
+        <ConfigProvider config={appConfig}>{children}</ConfigProvider>
       </body>
     </html>
   );
